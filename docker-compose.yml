@@ -4,9 +4,16 @@ services:
       context: ./frontend
       dockerfile: Dockerfile
     command: ["npm", "run", "dev"]
+    volumes:
+      - ./frontend/src:/app/src
+    environment:
+      - WATCHPACK_POLLING=true
+      - CHOKIDAR_USEPOLLING=true
+    ports:
+      - 5173:5173
   proxy:
     image: nginx:latest
     ports:
-    - 80:80
+      - 80:80
     volumes:
-    - ./proxy/nginx.conf:/etc/nginx/nginx.conf
+      - ./proxy/nginx.conf:/etc/nginx/nginx.conf
