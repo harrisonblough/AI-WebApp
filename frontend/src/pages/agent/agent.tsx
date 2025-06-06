@@ -1,7 +1,7 @@
 import { Button } from "@mui/material";
 import styles from "../CommonPageStyling.module.scss";
 
-export const Home = () => {
+export const Agent = () => {
   return (
     <div className={styles.holder}>
       <div className={styles.background}>
@@ -117,10 +117,10 @@ export const Home = () => {
         ></span>
       </div>
       <div className={styles.pageHolder}>
-        <div className={styles.mainText}>get help with your sas code</div>
+        <div className={styles.mainText}>welcome to your agent</div>
         <div className={styles.subHolder}>
-          <Button variant="text" href="/chat">
-            start chatting with your ai agent
+          <Button variant="text" href={"/"}>
+            go home
           </Button>
         </div>
       </div>

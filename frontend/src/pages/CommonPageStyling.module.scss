@@ -1,9 +1,121 @@
+.holder {
+  background-color: rgb(22, 22, 22);
+}
+
+.holder * {
+  animation: fadeIn 1s;
+}
+
 .pageHolder {
-  background-color: rgb(27, 27, 27);
   color: white;
   padding: none;
   margin: none;
-  block-size: 110vh;
-  inline-size: 100%;
-  overflow-x: hidden;
+  block-size: 100vh;
+  inline-size: 100vw;
+  flex-direction: column;
+  display: flex;
+  text-align: center;
+}
+
+.subHolder * {
+  color: gray !important;
+  font-weight: 200 !important;
+  font-size: 1.5rem !important;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.subHolder {
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+
+.subText {
+  padding-top: 1rem;
+  font-size: 1.5rem;
+  color: gray;
+  font-weight: 200;
+}
+
+.mainText {
+  padding-top: 20rem;
+  font-size: 3.5rem;
+  font-weight: 200;
+}
+
+.background {
+  height: 100%;
+  width: 100%;
+
+  overflow: hidden;
+}
+
+@keyframes rotate1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.background span {
+  position: absolute;
+  right: var(--w);
+  bottom: var(--i);
+  width: 3px;
+  height: 3px;
+  background-color: rgb(27, 170, 253);
+  border-radius: 5rem;
+  box-shadow: 0 0 30px 5px rgba(213, 213, 235, 0.26);
+  overflow: hidden;
+}
+
+.background span:nth-child(even) {
+  animation: run var(--t) infinite;
+}
+
+.background span:nth-child(odd) {
+  animation: runOdd var(--t) infinite;
+}
+
+@keyframes run {
+  0% {
+    right: var(--w);
+    bottom: var(--i);
+  }
+  50% {
+    right: calc(var(--w) + 5rem);
+    bottom: calc(var(--i) + 5rem);
+  }
+  100% {
+    right: var(--w);
+    bottom: var(--i);
+  }
+}
+
+@keyframes runOdd {
+  0% {
+    right: var(--w);
+    bottom: var(--i);
+  }
+  50% {
+    right: calc(var(--w) - 5rem);
+    bottom: calc(var(--i) - 5rem);
+  }
+  100% {
+    right: var(--w);
+    bottom: var(--i);
+  }
 }
